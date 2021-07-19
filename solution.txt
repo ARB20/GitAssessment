@@ -1,0 +1,53 @@
+	
+---Create a local repository and 3 text files into it.-- 
+	mkdir local
+   	cd local
+        git init
+        nano temp.txt
+        ls
+        git add .
+        git commit -m "It is a Temp file"
+
+---Creating 2 braches as Dev and Test--
+	git branch Dev
+	git branch Test
+	ls
+ 	git switch Dev
+	nano file1.txt
+	git add .
+	git commit -m "It is a file1"
+	git switch Test
+	nano file2.txt
+	nano file3.txt
+	git add .
+
+---Commiting 1 file into Dev and 2 files into Test---
+	git commit -m "second commit file2 and file3 to Test"
+	cd local
+	git switch Dev
+
+---Modifying 1st file some text--
+	nano file1.txt
+	git add .
+	git commit -m "second commit file1 to Dev"
+
+----Check differences and status---
+	git diff master Dev ./file1.txt
+ 	git switch master
+
+--Finally merge all together in a master branch---
+	git merge Dev
+	git merge Test
+
+---Push this repository on your github----
+ 	git remote add origin https://github.com/ARB20/GitAssessment.git
+ 	git push -u origin master
+	cd
+
+---Create a clone for this repo from github to local system with another location----
+	mkdir clonelocal
+	cd clonelocal
+
+	git init
+	git clone https://github.com/ARB20/GitAssessment.git
+	Cloning into 'GitAssessment'...
